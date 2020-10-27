@@ -3,8 +3,8 @@ import { Demo } from "./demo";
 
 let config = {
   type: Phaser.AUTO,
-  width: 320,
-  height: 160,
+  width: 800,
+  height: 800,
   scene: [
     Demo
   ],

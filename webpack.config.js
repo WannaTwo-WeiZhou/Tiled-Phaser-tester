@@ -27,12 +27,7 @@ module.exports = {
     filename: '[name].js'
   },
   plugins: [
-    // new CleanWebpackPlugin({
-    //   verbose: true,
-    //   // Automatically remove all unused webpack assets on rebuild
-    //   // default: true
-    //   cleanStaleWebpackAssets: false,
-    // }),
+    // new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: "Tiled-Phaser-tester",
       chunks: ['app']
