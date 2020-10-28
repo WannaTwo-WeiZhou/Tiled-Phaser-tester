@@ -3234,6 +3234,11 @@ pbkdf2@^3.0.3:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
+phaser-animated-tiles@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.npm.taobao.org/phaser-animated-tiles/download/phaser-animated-tiles-2.0.2.tgz#541f9ec3790de92ba11c662049a7234d6dde2f53"
+  integrity sha1-VB+ew3kN6SuhHGYgSacjTW3eL1M=
+
 phaser@^3.24.1:
   version "3.24.1"
   resolved "https://registry.npm.taobao.org/phaser/download/phaser-3.24.1.tgz#376e0c965d2a35af37c06ee78627dafbde5be017"

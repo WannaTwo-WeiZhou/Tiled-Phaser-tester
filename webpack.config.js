@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const pathToPhaser = path.join(__dirname, "/node_modules/phaser");
 const phaser = path.join(pathToPhaser, "dist/phaser.js");
+const animatedTiles = path.join(__dirname, "/node_modules/phaser-animated-tiles/dist/AnimatedTiles.js");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
@@ -14,12 +15,14 @@ module.exports = {
     rules: [
       { test: /\.ts$/, loader: "ts-loader", options: { allowTsInNodeModules: false }, exclude: "/node_modules/" },
       { test: /phaser\.js$/, loader: "expose-loader?Phaser" },
+      { test: /AnimatedTiles\.js$/, loader: "expose-loader?AnimatedTiles" },
     ]
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
     alias: {
       phaser: phaser,
+      animatedTiles: animatedTiles,
     }
   },
   output: {

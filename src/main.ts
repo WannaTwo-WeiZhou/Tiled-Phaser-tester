@@ -8,6 +8,15 @@ let config = {
   scene: [
     Demo
   ],
+  // plugins: {
+  //   scene: [
+  //     {
+  //       key: "AnimatedTiles",
+  //       plugin: Phaser.Plugins.ScenePlugin.,
+  //       mapping: "animatedTiles",
+  //     },
+  //   ],
+  // },
 };
 
 let game = new Phaser.Game(config);

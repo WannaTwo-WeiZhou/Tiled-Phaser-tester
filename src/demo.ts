@@ -13,8 +13,8 @@ export class Demo extends Phaser.Scene {
         this.map = this.make.tilemap({ key: "map" });
         const tileset = this.map.addTilesetImage("super-mario-16bit", "tiles");
         const downLayer = this.map.createStaticLayer("down", tileset);
-        const midLayer = this.map.createStaticLayer("mid", tileset);
-        const upLayer = this.map.createStaticLayer("up", tileset);
+        const midLayer = this.map.createDynamicLayer("mid", tileset);
+        const upLayer = this.map.createDynamicLayer("up", tileset);
 
         this.game.input.mouse.capture = true;
     }
@@ -31,25 +31,26 @@ export class Demo extends Phaser.Scene {
             let tile = this.map.getLayer("up").data[posIdx_y][posIdx_x];
             // console.log("tile: ", tile);
             if (tile.index > -1) {
-                if (tile.properties.hasOwnProperty("name")) {
-                    console.log(tile.properties.name);
-                }
+                this.tileHandler(tile);
             } else {
                 tile = this.map.getLayer("mid").data[posIdx_y][posIdx_x];
                 if (tile.index > -1) {
-                    if (tile.properties.hasOwnProperty("name")) {
-                        console.log(tile.properties.name);
-                    }
+                    this.tileHandler(tile);
                 } else {
                     tile = this.map.getLayer("down").data[posIdx_y][posIdx_x];
                     if (tile.index > -1) {
-                        if (tile.properties.hasOwnProperty("name")) {
-                            console.log(tile.properties.name);
-                        }
+                        this.tileHandler(tile);
                     }
                 }
             }
 
         }
+    }
+
+    private tileHandler(tile: Tilemaps.Tile) {
+        if (tile.properties.hasOwnProperty("name")) {
+            console.log(tile.properties.name);
+        }
+        tile.index = -1;
     }
 }
