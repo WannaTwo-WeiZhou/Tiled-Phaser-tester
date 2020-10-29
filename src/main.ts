@@ -1,12 +1,13 @@
 import "phaser";
-import { Demo } from "./demo";
+import { SpriteScene } from "./sprite.scene";
+import { TileMapScene } from "./tilemap.scene";
 
 let config = {
   type: Phaser.AUTO,
-  width: 800,
-  height: 800,
+  width: 3200,
+  height: 3200,
   scene: [
-    Demo
+    TileMapScene
   ],
   // plugins: {
   //   scene: [
